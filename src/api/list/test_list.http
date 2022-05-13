@@ -1,0 +1,29 @@
+@host= http://localhost:8081/api/v1/list
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUyNDY4NjI2LCJleHAiOjE2NTI2NDE0MjZ9.rJE1FLkJ7zbdw7XacfoD3uRnIoExSqhEyhdBpzK3olo
+@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNDY4NjQwLCJleHAiOjE2NTI2NDE0NDB9.qWke1AdBvZIX4pwGYDn09tq83m7F280rVG8eBkBIl80
+
+### user lists
+GET {{host}}
+authorization: {{token1}}
+
+### crear lista de peliculas
+POST {{host}}/create
+authorization: {{token1}}
+Content-Type: application/json
+
+{
+    "name": "Aventura"
+}
+
+### crear lista de peliculas
+PUT {{host}}/update/1
+authorization: {{token1}}
+Content-Type: application/json
+
+{
+    "name": "Accion"
+}
+
+### borrar lista de peliculas
+DELETE {{host}}/delete/1
+authorization: {{token1}}

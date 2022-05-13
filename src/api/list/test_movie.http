@@ -1,0 +1,17 @@
+@listID = 5
+@host= http://localhost:8081/api/v1/list/{{listID}}/movies
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUyNDY4NjI2LCJleHAiOjE2NTI2NDE0MjZ9.rJE1FLkJ7zbdw7XacfoD3uRnIoExSqhEyhdBpzK3olo
+@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNDY4NjQwLCJleHAiOjE2NTI2NDE0NDB9.qWke1AdBvZIX4pwGYDn09tq83m7F280rVG8eBkBIl80
+
+### obtener peliculas de una lista
+GET {{host}}
+authorization: {{token1}}
+
+### Añadir pelicula a la lista
+POST {{host}}/add/1201
+authorization: {{token1}}
+
+
+### Eliminar pelicula de la lista
+DELETE {{host}}/remove/1201
+authorization: {{token1}}
