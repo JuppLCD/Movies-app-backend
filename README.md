@@ -39,7 +39,7 @@ authorization: token
 ##### User info (lists, movies)
 
 ```
-GET /user/login
+GET /user/info
 authorization: token
 ```
 
