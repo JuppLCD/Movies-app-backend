@@ -1,5 +1,7 @@
 const { User, List, MovieList } = require('./../../db/db');
 
+const mapMoviesId = require('../../utils/mapMoviesId');
+
 const controller = {};
 
 // GET - listas del usuario
@@ -127,7 +129,8 @@ controller.getMovies = async (req, res, next) => {
 		if (Movies === null) {
 			throw new Error();
 		}
-		res.json(Movies);
+		const MoviesJSON = mapMoviesId(Movies);
+		res.json(MoviesJSON);
 	} catch (err) {
 		next(err.menssage);
 	}

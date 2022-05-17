@@ -1,5 +1,7 @@
 const { User, List, MovieList } = require('./../../db/db');
+
 const createToken = require('./../../utils/createToken');
+const mapMoviesId = require('../../utils/mapMoviesId');
 
 const Boom = require('@hapi/boom');
 
@@ -26,8 +28,8 @@ controller.info = async (req, res, next) => {
 		if (UserInfo === null) {
 			throw new Error();
 		}
-
-		res.json(UserInfo);
+		const UserInfoJSON = mapMoviesId(UserInfo);
+		res.json(UserInfoJSON);
 	} catch (err) {
 		next(err.menssage);
 	}

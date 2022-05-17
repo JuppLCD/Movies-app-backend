@@ -1,6 +1,6 @@
 @host= http://localhost:8081/api/v1/list
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjUyNDY4NjI2LCJleHAiOjE2NTI2NDE0MjZ9.rJE1FLkJ7zbdw7XacfoD3uRnIoExSqhEyhdBpzK3olo
-@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNDY4NjQwLCJleHAiOjE2NTI2NDE0NDB9.qWke1AdBvZIX4pwGYDn09tq83m7F280rVG8eBkBIl80
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNzQ4MTYwLCJleHAiOjE2NTI5MjA5NjB9.8VEJyJsA_ELa-htnN07USR86uMxgKEwpE9OrMBknJ88
+@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjUyNzQ4MTg4LCJleHAiOjE2NTI5MjA5ODh9.vfqHwqwCjiWQTCM4ShtZ2zHk6zIsaCmqAU2tLB5_L7A
 
 ### user lists
 GET {{host}}
@@ -12,7 +12,7 @@ authorization: {{token1}}
 Content-Type: application/json
 
 {
-    "name": "Aventura"
+    "name": "New List"
 }
 
 ### crear lista de peliculas
