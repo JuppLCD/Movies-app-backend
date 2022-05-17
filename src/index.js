@@ -5,7 +5,7 @@ app.listen(app.get('port'), () => {
 	console.log(`Server on port ${app.get('port')}`);
 
 	sequelize
-		.sync({ force: false })
+		.sync({ force: true })
 		.then(() => {
 			console.log('Nos hemos conectado a la base de datos');
 		})

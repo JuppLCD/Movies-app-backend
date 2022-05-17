@@ -4,7 +4,7 @@ POST  {{host}}/register
 Content-Type: application/json
 
 {
-"name": "user1",
+"name": "user2",
 "password": "123",
 "passwordConfirm": "123"
 }
@@ -17,8 +17,8 @@ Content-Type: application/json
 "password": "123"
 }
 ### login con token
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNzUxMTE4LCJleHAiOjE2NTI5MjM5MTh9.innXVBy7iFd5qEjlMziv0OyRPqXerZhJX2VrAP9naEw
-@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjUyNzQ4MTg4LCJleHAiOjE2NTI5MjA5ODh9.vfqHwqwCjiWQTCM4ShtZ2zHk6zIsaCmqAU2tLB5_L7A
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODA0NDYxLCJleHAiOjE2NTI5NzcyNjF9.ZbkxuWJJmgerf1OSfdY8KjVDzpipMzKoAZigZAJv9Bc
+@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyODA0NTEyLCJleHAiOjE2NTI5NzczMTJ9.9O4BBpKRMiZGFfy7CmVIhMDA6LB_do06c209EPRTVyc
 
 POST {{host}}/login
 authorization: {{token1}}

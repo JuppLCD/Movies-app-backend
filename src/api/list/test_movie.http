@@ -1,14 +1,13 @@
-@listID = 4
+@listID = 1
 @host= http://localhost:8081/api/v1/list/{{listID}}/movies
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyNzQ4MTYwLCJleHAiOjE2NTI5MjA5NjB9.8VEJyJsA_ELa-htnN07USR86uMxgKEwpE9OrMBknJ88
-@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjUyNzQ4MTg4LCJleHAiOjE2NTI5MjA5ODh9.vfqHwqwCjiWQTCM4ShtZ2zHk6zIsaCmqAU2tLB5_L7A
-
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODA0NDYxLCJleHAiOjE2NTI5NzcyNjF9.ZbkxuWJJmgerf1OSfdY8KjVDzpipMzKoAZigZAJv9Bc
+@token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyODA0NTEyLCJleHAiOjE2NTI5NzczMTJ9.9O4BBpKRMiZGFfy7CmVIhMDA6LB_do06c209EPRTVyc
 ### obtener peliculas de una lista
 GET {{host}}
 authorization: {{token1}}
 
 ### Añadir pelicula a la lista
-POST {{host}}/add/70
+POST {{host}}/add/80
 authorization: {{token1}}
 
 

@@ -11,6 +11,9 @@ db.sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USERNAME, p
 	host: process.env.DB_HOST,
 	dialect: process.env.DB_DIALECT,
 	logging: process.env.DB_LOGGING === 'true',
+	dialectOptions: {
+		ssl: { rejectUnauthorized: false },
+	},
 });
 
 // Add Models to db
