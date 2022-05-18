@@ -65,7 +65,7 @@ controller.updateNameList = async (req, res, next) => {
 		if (UserLists === null) {
 			throw new Error('Error al buscar el usuario');
 		}
-		const newList = await List.create({ name }, { where: { id: idList, user_id: id } });
+		const newList = await List.update({ name }, { where: { id: idList, user_id: id } });
 
 		if (newList === null) {
 			throw new Error('Error al cambiar el nombre a la lista');

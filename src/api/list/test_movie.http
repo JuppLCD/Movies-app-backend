@@ -1,6 +1,6 @@
 @listID = 3
 @host= http://localhost:8081/api/v1/list/{{listID}}/movies
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODM3NDE1LCJleHAiOjE2NTMwMTAyMTV9.UVNXlFnCdGEC47NG-y1G-LR160jCOtU84r0mUw4TKyA
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODM4MzIyLCJleHAiOjE2NTMwMTExMjJ9.0GOMlXJR2J6qSDzFCD0R_RzxyL2gtyOwyahNvJTE_OU
 @token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyODA0NTEyLCJleHAiOjE2NTI5NzczMTJ9.9O4BBpKRMiZGFfy7CmVIhMDA6LB_do06c209EPRTVyc
 ### obtener peliculas de una lista
 GET {{host}}
