@@ -7,8 +7,10 @@ const { userSchemaLogin } = require('./../validation/userSchema');
 
 const validLogin = async (req, res, next) => {
 	const token = req.headers['authorization'];
-	const user = req.body;
-
+	const user = {
+		password: String(req.body?.password).trim(),
+		name: String(req.body?.name).trim(),
+	};
 	if (token) {
 		jwt.verify(token.trim(), process.env.AccessTokenSecret, (err, info) => {
 			if (err) {
