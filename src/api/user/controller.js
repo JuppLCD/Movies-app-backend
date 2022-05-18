@@ -36,15 +36,16 @@ controller.info = async (req, res, next) => {
 };
 
 controller.login = async (req, res, next) => {
-	if (req.userInfo.token) {
-		const user = await User.findOne({ where: { id: req.userInfo.user.id } });
-		if (!user) {
-			throw next(Boom.unauthorized());
-		}
-		return res.status(204).end();
-	}
-	const { password, name } = req.userInfo.user;
 	try {
+		if (req.userInfo.token) {
+			const userExist = await User.findOne({ where: { id: req.userInfo.user.id } });
+			if (!userExist) {
+				throw next(Boom.unauthorized());
+			}
+			return res.status(204).end();
+		}
+		const { password, name } = req.userInfo.user;
+
 		const user = await User.findOne({ where: { name } });
 		if (!user) {
 			next(Boom.unauthorized('Usuario o contraseña no valido'));

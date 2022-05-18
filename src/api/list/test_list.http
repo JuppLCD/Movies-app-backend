@@ -1,5 +1,5 @@
 @host= http://localhost:8081/api/v1/list
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODA0NDYxLCJleHAiOjE2NTI5NzcyNjF9.ZbkxuWJJmgerf1OSfdY8KjVDzpipMzKoAZigZAJv9Bc
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODM3NDE1LCJleHAiOjE2NTMwMTAyMTV9.UVNXlFnCdGEC47NG-y1G-LR160jCOtU84r0mUw4TKyA
 @token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyODA0NTEyLCJleHAiOjE2NTI5NzczMTJ9.9O4BBpKRMiZGFfy7CmVIhMDA6LB_do06c209EPRTVyc
 
 ### user lists
@@ -12,16 +12,16 @@ authorization: {{token1}}
 Content-Type: application/json
 
 {
-    "name": "New List"
+    "name": "Accion"
 }
 
-### crear lista de peliculas
+### rename lista de peliculas
 PUT {{host}}/update/1
 authorization: {{token1}}
 Content-Type: application/json
 
 {
-    "name": "Accion"
+    "name": "Romance"
 }
 
 ### borrar lista de peliculas
