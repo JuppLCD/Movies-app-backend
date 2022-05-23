@@ -1,5 +1,5 @@
 @host= http://localhost:8081/api/v1/list
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUyODM4MzIyLCJleHAiOjE2NTMwMTExMjJ9.0GOMlXJR2J6qSDzFCD0R_RzxyL2gtyOwyahNvJTE_OU
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUzMzI3NzQ1LCJleHAiOjE2NTM1MDA1NDV9.Yw3q40cqfb0GFvMVh7Em7eiI5MkHBKjBLLneCk-DOKM
 @token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyODA0NTEyLCJleHAiOjE2NTI5NzczMTJ9.9O4BBpKRMiZGFfy7CmVIhMDA6LB_do06c209EPRTVyc
 
 ### user lists
@@ -12,7 +12,7 @@ authorization: {{token1}}
 Content-Type: application/json
 
 {
-    "name": "Accion"
+    "name": "Likes"
 }
 
 ### rename lista de peliculas

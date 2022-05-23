@@ -13,7 +13,7 @@ router.put('/update/:idList', authJwt, updateNameList); // { name :string }
 router.delete('/delete/:idList', authJwt, deleteList);
 
 router.get('/:idList/movies', authJwt, getMovies);
-router.post('/:idList/movies/add/:movie', authJwt, addMovie);
-router.delete('/:idList/movies/remove/:movie', authJwt, deleteMovie);
+router.get('/:idList/movies/add/:movie', authJwt, addMovie);
+router.get('/:idList/movies/remove/:movie', authJwt, deleteMovie);
 
 module.exports = router;

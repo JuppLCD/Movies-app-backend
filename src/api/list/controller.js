@@ -136,7 +136,7 @@ controller.getMovies = async (req, res, next) => {
 	}
 };
 
-// POST - añadir movie a una lista
+// GET - añadir movie a una lista
 controller.addMovie = async (req, res, next) => {
 	const { id } = req.tokenInfo;
 
@@ -168,7 +168,7 @@ controller.addMovie = async (req, res, next) => {
 	}
 };
 
-// DELETE - eliminar movie de una lista
+// GET - eliminar movie de una lista
 controller.deleteMovie = async (req, res, next) => {
 	const { id } = req.tokenInfo;
 	if (!req.params?.movie || !req.params?.idList) {

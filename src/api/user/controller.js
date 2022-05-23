@@ -76,6 +76,8 @@ controller.register = async (req, res, next) => {
 			password: newPassword,
 		});
 
+		await List.create({ user_id: newUser.id, name: 'Likes' });
+
 		const accessToken = createToken(newUser.id);
 		res.json({ accessToken });
 	} catch (err) {
