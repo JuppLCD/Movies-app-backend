@@ -29,11 +29,12 @@ controller.getLists = async (req, res, next) => {
 // POST - crear lista
 controller.createList = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	if (!req.body?.name || !String(req.body.name).trim()) {
-		throw new Error('Falta el nombre de la lista de peliculas');
-	}
-	const name = String(req.body.name);
+	console.log(req.body);
 	try {
+		if (!req.body?.name || !String(req.body.name).trim()) {
+			throw new Error('Falta el nombre de la lista de peliculas');
+		}
+		const name = String(req.body.name);
 		const UserLists = await User.findOne({
 			where: { id },
 		});
