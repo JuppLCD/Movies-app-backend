@@ -17,7 +17,7 @@ controller.info = async (req, res, next) => {
 			include: {
 				as: 'lists',
 				model: List,
-				attributes: ['name'],
+				attributes: ['name', 'id'],
 				include: {
 					as: 'movies',
 					model: MovieList,

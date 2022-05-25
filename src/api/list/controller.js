@@ -29,10 +29,10 @@ controller.getLists = async (req, res, next) => {
 // POST - crear lista
 controller.createList = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	if (!req.body?.name) {
+	if (!req.body?.name || !String(req.body.name).trim()) {
 		throw new Error('Falta el nombre de la lista de peliculas');
 	}
-	const { name } = req.body;
+	const name = String(req.body.name);
 	try {
 		const UserLists = await User.findOne({
 			where: { id },
@@ -44,7 +44,7 @@ controller.createList = async (req, res, next) => {
 		if (newList === null) {
 			throw new Error('Error al crear la lista');
 		}
-		res.status(204).end();
+		res.json({ listId: newList.id });
 	} catch (err) {
 		next(err.menssage);
 	}
@@ -53,7 +53,7 @@ controller.createList = async (req, res, next) => {
 // PUT - cambiar nombre a lista
 controller.updateNameList = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	if (!req.body?.name || !req.params?.idList) {
+	if (!req.body?.name || !req.params?.idList | !String(req.body.name).trim()) {
 		throw new Error('Error: faltan datos');
 	}
 	const { name } = req.body;
