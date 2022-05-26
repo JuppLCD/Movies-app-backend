@@ -1,13 +1,13 @@
 @listID = 1
 @host= http://localhost:8081/api/v1/list/{{listID}}/movies
-@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUzMzI3NzQ1LCJleHAiOjE2NTM1MDA1NDV9.Yw3q40cqfb0GFvMVh7Em7eiI5MkHBKjBLLneCk-DOKM
+@token1=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUzNTEwNTkzLCJleHAiOjE2NTM2ODMzOTN9.sNpc94bOOQ8Z6D3tKGOn8XgBTRMhm60fP6wI5sZ-F1o
 @token2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjUyODA0NTEyLCJleHAiOjE2NTI5NzczMTJ9.9O4BBpKRMiZGFfy7CmVIhMDA6LB_do06c209EPRTVyc
 ### obtener peliculas de una lista
 GET {{host}}
 authorization: {{token1}}
 
 ### Añadir pelicula a la lista
-GET {{host}}/add/1201
+GET {{host}}/add/2021
 authorization: {{token1}}
 
 

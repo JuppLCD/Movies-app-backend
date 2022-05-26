@@ -54,12 +54,12 @@ controller.createList = async (req, res, next) => {
 // PUT - cambiar nombre a lista
 controller.updateNameList = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	if (!req.body?.name || !req.params?.idList | !String(req.body.name).trim()) {
-		throw new Error('Error: faltan datos');
-	}
-	const { name } = req.body;
-	const { idList } = req.params;
 	try {
+		if (!req.body?.name || !req.params?.idList | !String(req.body.name).trim()) {
+			throw new Error('Error: faltan datos');
+		}
+		const { name } = req.body;
+		const { idList } = req.params;
 		const UserLists = await User.findOne({
 			where: { id },
 		});
@@ -80,11 +80,11 @@ controller.updateNameList = async (req, res, next) => {
 // DELETE - eliminar lista
 controller.deleteList = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	if (!req.params?.idList) {
-		throw new Error('Falta el id de la lista de peliculas');
-	}
-	const { idList } = req.params;
 	try {
+		if (!req.params?.idList) {
+			throw new Error('Falta el id de la lista de peliculas');
+		}
+		const { idList } = req.params;
 		const UserLists = await User.findOne({
 			where: { id },
 		});
@@ -140,13 +140,16 @@ controller.getMovies = async (req, res, next) => {
 // GET - añadir movie a una lista
 controller.addMovie = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-
-	if (!req.params?.movie || !req.params?.idList) {
-		throw new Error('Error: faltan datos');
-	}
-	const { idList } = req.params;
-	const { movie } = req.params;
 	try {
+		if (!req.params?.movie || !req.params?.idList) {
+			throw new Error('Error: faltan datos');
+		}
+		const { idList } = req.params;
+		const { movie } = req.params;
+
+		if (Number(movie) === NaN) {
+			res.status(400).end();
+		}
 		const UserList = await User.findOne({
 			where: { id },
 			attributes: ['name'],
@@ -154,10 +157,20 @@ controller.addMovie = async (req, res, next) => {
 				as: 'lists',
 				model: List,
 				where: { id: idList },
+				include: {
+					as: 'movies',
+					model: MovieList,
+					attributes: ['movie'],
+				},
 			},
 		});
 		if (UserList === null) {
 			throw new Error(`Error: No se ha encontrado la lista con id "${idList}" en el usuario`);
+		}
+		const MoviesJSON = mapMoviesId(UserList);
+		if (MoviesJSON.lists[0].movies.includes(Number(movie))) {
+			res.status(204).end();
+			return;
 		}
 		const Movies = await MovieList.create({ list_id: idList, movie });
 		if (Movies === null) {
@@ -172,12 +185,12 @@ controller.addMovie = async (req, res, next) => {
 // GET - eliminar movie de una lista
 controller.deleteMovie = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	if (!req.params?.movie || !req.params?.idList) {
-		throw new Error('Error: faltan datos');
-	}
-	const { idList } = req.params;
-	const { movie } = req.params;
 	try {
+		if (!req.params?.movie || !req.params?.idList) {
+			throw new Error('Error: faltan datos');
+		}
+		const { idList } = req.params;
+		const { movie } = req.params;
 		const UserList = await User.findOne({
 			where: { id },
 			attributes: ['name'],
