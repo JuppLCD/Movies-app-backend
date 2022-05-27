@@ -97,13 +97,13 @@ authorization: token
 ##### Add Movie
 
 ```
-GET /list/:listId/movies/add/:movieId
+POST /list/:listId/movies/add/:movieId
 authorization: token
 ```
 
 ##### Remove Movie
 
 ```
-GET /list/:listId/movies/remove/:movieId
+DELETE /list/:listId/movies/remove/:movieId
 authorization: token
 ```

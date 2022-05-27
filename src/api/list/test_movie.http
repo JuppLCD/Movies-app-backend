@@ -7,10 +7,10 @@ GET {{host}}
 authorization: {{token1}}
 
 ### Añadir pelicula a la lista
-GET {{host}}/add/2021
+POST {{host}}/add/2021
 authorization: {{token1}}
 
 
 ### Eliminar pelicula de la lista
-GET {{host}}/remove/1201
+DELETE {{host}}/remove/1201
 authorization: {{token1}}

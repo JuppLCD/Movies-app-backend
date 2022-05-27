@@ -14,7 +14,6 @@ module.exports = (sequelize) => {
 			},
 			movie: {
 				type: DataTypes.INTEGER,
-				unique: true,
 				allowNull: false,
 			},
 		},

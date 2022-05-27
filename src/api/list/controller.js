@@ -29,7 +29,6 @@ controller.getLists = async (req, res, next) => {
 // POST - crear lista
 controller.createList = async (req, res, next) => {
 	const { id } = req.tokenInfo;
-	console.log(req.body);
 	try {
 		if (!req.body?.name || !String(req.body.name).trim()) {
 			throw new Error('Falta el nombre de la lista de peliculas');
@@ -137,7 +136,7 @@ controller.getMovies = async (req, res, next) => {
 	}
 };
 
-// GET - añadir movie a una lista
+// POST - añadir movie a una lista
 controller.addMovie = async (req, res, next) => {
 	const { id } = req.tokenInfo;
 	try {
@@ -172,7 +171,7 @@ controller.addMovie = async (req, res, next) => {
 			res.status(204).end();
 			return;
 		}
-		const Movies = await MovieList.create({ list_id: idList, movie });
+		const Movies = await MovieList.create({ list_id: idList, movie: Number(movie) });
 		if (Movies === null) {
 			throw new Error('Error: No se pudo añadir la pelicula a la lista');
 		}
@@ -182,7 +181,7 @@ controller.addMovie = async (req, res, next) => {
 	}
 };
 
-// GET - eliminar movie de una lista
+// DELETE - eliminar movie de una lista
 controller.deleteMovie = async (req, res, next) => {
 	const { id } = req.tokenInfo;
 	try {
@@ -209,7 +208,6 @@ controller.deleteMovie = async (req, res, next) => {
 		}
 		res.status(204).end();
 	} catch (err) {
-		console.error(err);
 		next(err.menssage);
 	}
 };
