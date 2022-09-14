@@ -1,6 +1,6 @@
 ## Backend de una APP WEB de peliculas
 
-URL_DEPLOY = https://movies--backend.herokuapp.com/
+URL_DEPLOY = https://movies-app-backend-production.up.railway.app/
 API_URL = /api/v1/
 
 ### Users
